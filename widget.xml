@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget>
+    <uuid>2f3786bf-b12c-481d-bf2b-d584535bd412</uuid>
+    <name lang="ja">乱数を混ぜる</name>
+    <name lang="en">addRand</name>
+    <url>index.html</url>
+    <version>1.0</version>
+    <description lang="ja">乱数を混ぜる</description>
+    <description lang="en">addRand</description>
+    <window initial_size="400 200" position="0.42 0.63" resizeable="true">
+    </window>
+</widget>

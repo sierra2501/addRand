@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/gannet.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/readExternalFile.js"></script>
+
+    <script type="text/javascript">
+
+    function do_script () {
+
+        // 外部ファイルのPythonコードを読み込み.
+        py_src = readFileToString('py/addRand.py');
+
+        py_src = py_src.replace("TARGET_RAND_XA", "\"" + document.getElementById('rand_xa').value + "\"");
+        py_src = py_src.replace("TARGET_RAND_XB", "\"" + document.getElementById('rand_xb').value + "\"");
+        py_src = py_src.replace("TARGET_RAND_YA", "\"" + document.getElementById('rand_ya').value + "\"");
+        py_src = py_src.replace("TARGET_RAND_YB", "\"" + document.getElementById('rand_yb').value + "\"");
+        py_src = py_src.replace("TARGET_RAND_ZA", "\"" + document.getElementById('rand_za').value + "\"");
+        py_src = py_src.replace("TARGET_RAND_ZB", "\"" + document.getElementById('rand_zb').value + "\"");
+
+        window.external.setScript(py_src);
+    }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="sh-wd-wrapper">
+
+        <div id="sh-wd-header">
+            <h3>乱数を混ぜる</h3>
+        </div>
+
+        <div id="sh-wd-main">
+            <form id="sh-wd-form">
+                <div>
+                    <label for="rand_xa">X</label>
+                    <input type="number" id="rand_xa" value="0" form="sh-wd-form" />
+                    <input type="number" id="rand_xb" value="0" form="sh-wd-form" />
+                </div>
+                <div>
+                    <label for="rand_xa">Y</label>
+                    <input type="number" id="rand_ya" value="0" form="sh-wd-form" />
+                    <input type="number" id="rand_yb" value="0" form="sh-wd-form" />
+                </div>
+                <div>
+                    <label for="rand_xa">Z</label>
+                    <input type="number" id="rand_za" value="0" form="sh-wd-form" />
+                    <input type="number" id="rand_zb" value="0" form="sh-wd-form" />
+                </div>
+                <div class="sh-wd-tp">
+                    <input type="button" id="" form="sh-wd-form" value="実行する" onclick="do_script();" />
+                </div>
+            </form>
+        </div>
+
+        <div id="sh-wd-footer">
+            <p>@sierra2501</p>
+        </div>
+    </div>
+    
+
+</body>
+</html>
